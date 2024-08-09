@@ -45,12 +45,6 @@
 
         <!-- Content Start -->
         <div class="container-fluid col-sm-12 col-md-12 col-lg-9 p-4">
-            <div class="d-flex">
-                <h1 class="fw-bold text-uppercase"><?php echo $_GET['page']; ?></h1>
-                <button type="button" class="btn btn-link d-flex gap-1 align-items-center ms-auto"><img src="assets/img/logout.png" alt="icon-logout" style="width: 25px; height: 25px;"></button>
-            </div>
-            <hr>
-
             <!-- Main Content -->
             <?php
             $page = $_GET['page'];
@@ -63,6 +57,8 @@
             } elseif ($page == "book") {
                 if ($aksi == "") {
                     include "page/book/book.php";
+                } elseif ($aksi == "tambah") {
+                    include "page/book/tambah.php";
                 }
             } elseif ($page == "transaction") {
                 if ($aksi == "") {
