@@ -53,12 +53,22 @@
             if ($page == "member") {
                 if ($aksi == "") {
                     include "page/member/member.php";
+                }elseif ($aksi == "add") {
+                    include "page/member/add.php";
+                } elseif ($aksi == "edit") {
+                    include "page/member/edit.php";
+                } elseif ($aksi == "delete") {
+                    include "page/member/delete.php";
                 }
             } elseif ($page == "book") {
                 if ($aksi == "") {
                     include "page/book/book.php";
-                } elseif ($aksi == "tambah") {
-                    include "page/book/tambah.php";
+                } elseif ($aksi == "add") {
+                    include "page/book/add.php";
+                } elseif ($aksi == "edit") {
+                    include "page/book/edit.php";
+                } elseif ($aksi == "delete") {
+                    include "page/book/delete.php";
                 }
             } elseif ($page == "transaction") {
                 if ($aksi == "") {

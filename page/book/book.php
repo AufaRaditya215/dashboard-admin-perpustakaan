@@ -21,7 +21,7 @@
     <div class="container-fluid">
         <h3 class="mb-4 fw-bold">Data Buku Perpustakaan</h3>
         <hr style="border: 1px solid;">
-        <a href="?page=book&aksi=tambah" class="btn btn-success mb-4">Add Data</a>
+        <a href="?page=book&aksi=add" class="btn btn-success mb-4">Add Data</a>
         <table id="data-table" class="table table-striped table-hover" style="width:100%">
             <thead class="text-center align-middle">
                 <tr>
@@ -50,7 +50,7 @@
                         <td><?php echo $data['tgl_input']; ?></td>
                         <td>
                             <a href="?page=book&aksi=edit&id_buku=<?php echo $data['id_buku']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="?page=book&aksi=delete&id_buku=<?php echo $data['id_buku']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                            <a onclick="confirm('Apakah anda yakin ingin menghapus data ini?')" href="?page=book&aksi=delete&id_buku=<?php echo $data['id_buku']; ?>" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                 <?php } ?>
