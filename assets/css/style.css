@@ -1,0 +1,29 @@
+/* Sidebar */
+.sidebar{
+    background-color: #F8EDED;
+    height: 100vh; 
+}
+
+/* Profile */
+ul.nav div.profil h4{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+/* Menu */
+div.menu li a{
+    color: black;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    /* Sidebar */
+    .sidebar{
+        height: 50vh;
+    }
+    
+    /* profil */
+    div.profil{
+        margin-top: 50px;
+    }
+}
