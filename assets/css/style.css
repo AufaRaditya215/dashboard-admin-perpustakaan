@@ -1,7 +1,7 @@
 /* Sidebar */
 .sidebar{
     background-color: #F8EDED;
-    height: 100vh; 
+    min-height: 100vh; 
 }
 
 /* Profile */
@@ -19,11 +19,18 @@ div.menu li a{
 @media (max-width: 991px) {
     /* Sidebar */
     .sidebar{
-        height: 50vh;
+        min-height: auto;
     }
-    
     /* profil */
     div.profil{
         margin-top: 50px;
     }
+}
+
+@media (max-width: 575px){
+    /* Sidebar */
+    ul.flex-exsm{
+        justify-content: center;
+    }
+
 }

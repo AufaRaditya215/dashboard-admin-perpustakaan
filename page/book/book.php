@@ -49,8 +49,10 @@
                         <td><?php echo $data['jumlah_buku']; ?></td>
                         <td><?php echo $data['tgl_input']; ?></td>
                         <td>
-                            <a href="?page=book&aksi=edit&id_buku=<?php echo $data['id_buku']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a onclick="confirm('Apakah anda yakin ingin menghapus data ini?')" href="?page=book&aksi=delete&id_buku=<?php echo $data['id_buku']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="?page=book&aksi=edit&id_buku=<?php echo $data['id_buku']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="?page=book&aksi=delete&id_buku=<?php echo $data['id_buku']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
                         </td>
                     </tr>
                 <?php } ?>

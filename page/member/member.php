@@ -22,7 +22,7 @@
         <h3 class="mb-4 fw-bold">Data Anggota Perpustakaan</h3>
         <hr style="border: 1px solid;">
         <a href="?page=member&aksi=add" class="btn btn-success mb-4">Add Data</a>
-        <table id="data-table" class="table table-striped table-hover" style="width:100%">
+        <table id="data-table" class="container table table-striped table-hover" style="width:100%">
             <thead class="text-center align-middle">
                 <tr>
                     <th>ID Anggota</th>
@@ -47,14 +47,16 @@
                         <td><?php echo $data['email']; ?></td>
                         <td><?php echo $data['alamat']; ?></td>
                         <td>
-                            <a href="?page=member&aksi=edit&id_anggota=<?php echo $data['id_anggota']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a onclick="confirm('Apakah anda yakin ingin menghapus data ini?')" href="?page=member&aksi=delete&id_anggota=<?php echo $data['id_anggota']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="?page=member&aksi=edit&id_anggota=<?php echo $data['id_anggota']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="?page=member&aksi=delete&id_anggota=<?php echo $data['id_anggota']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
-          </table>
-      </div>
+        </table>
+    </div>
     <!-- Table End -->
 
     <!-- jQuery -->
@@ -66,10 +68,10 @@
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
     <!-- Inisialisasi DataTables -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#data-table').DataTable();
         });
-    </script>   
+    </script>
 </body>
 
 </html>

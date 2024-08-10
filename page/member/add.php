@@ -49,7 +49,8 @@
                         <input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat" required>
                     </div>
                 </div>
-                <button class="btn btn-primary mt-2" type="submit" name="simpan" value="Simpan" style="width: 100px;">Submit</button>
+                <button class="btn btn-primary mt-2 me-2" type="submit" name="simpan" value="Simpan" style="width: 100px;">Submit</button>
+                <button class="btn btn-danger mt-2" type="button" name="batal" value="Batal" onclick="window.location.href='?page=member'" style="width: 100px;">Cancel</button>
             </div>
         </form>
     </main>

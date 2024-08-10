@@ -65,7 +65,8 @@ $data = $sql->fetch_assoc();
                         <input type="date" class="form-control" name="tanggal" value="<?php echo htmlspecialchars($data['tgl_input'] ?? ''); ?>" required>
                     </div>
                 </div>
-                <button class="btn btn-primary mt-2" type="submit" name="simpan" value="Simpan" style="width: 100px;">Submit</button>
+                <button class="btn btn-primary mt-2 me-3" type="submit" name="simpan" value="Simpan" style="width: 100px;">Submit</button>
+                <button class="btn btn-danger mt-2" type="button" name="batal" value="Batal" onclick="window.location.href='?page=book'" style="width: 100px;">Cancel</button>
             </div>
         </form>
         <!-- Form Edit Buku End -->

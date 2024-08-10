@@ -38,10 +38,10 @@ $data = $sql->fetch_assoc();
                 <div class="col-6">
                     <div class="mb-3">
                         <label class="mb-2">Jenis Kelamin</label>
-                        <select name="jenis_kelamin" class="form-control" value="<?php echo htmlspecialchars($data['jenis_kelamin'] ?? ''); ?>" required>
-                            <option value="Laki-Laki">Laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                        </select>
+                            <select name="jenis_kelamin" class="form-control" required>
+                                <option value="Laki-Laki" <?php echo ($data['jenis_kelamin'] == 'Laki-Laki') ? 'selected' : ''; ?>>Laki-laki</option>
+                                <option value="Perempuan" <?php echo ($data['jenis_kelamin'] == 'Perempuan') ? 'selected' : ''; ?>>Perempuan</option>
+                            </select>
                     </div>
                 </div>
                 <div class="col-6">
@@ -62,7 +62,8 @@ $data = $sql->fetch_assoc();
                         <input type="text" class="form-control" name="alamat" value="<?php echo htmlspecialchars($data['alamat'] ?? ''); ?>" required>
                     </div>
                 </div>
-                <button class="btn btn-primary mt-2" type="submit" name="simpan" value="Simpan" style="width: 100px;">Submit</button>
+                <button class="btn btn-primary mt-2 me-3" type="submit" name="simpan" value="Simpan" style="width: 100px;">Submit</button>
+                <button class="btn btn-danger mt-2" type="button" name="batal" value="Batal" onclick="window.location.href='?page=member'" style="width: 100px;">Cancel</button>
             </div>
         </form>
         <!-- Form Edit Anggota End -->

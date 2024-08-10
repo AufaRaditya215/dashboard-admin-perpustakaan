@@ -8,6 +8,6 @@
 
 <!-- Redirect -->
 <script>
-    alert("Data Buku Berhasil Dihapus");
+    alert("Data Anggota Berhasil Dihapus");
     window.location = "?page=member";
 </script>

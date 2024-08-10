@@ -15,8 +15,8 @@
     <!-- Containter Start -->
     <main class="row d-flex">
         <!-- Sidebar Start -->
-        <div class="col-sm-12 col-md-12 col-lg-3">
-            <ul class="nav flex-column p-4 sidebar">
+        <div class="col-sm-12 col-md-12 col-lg-3 sidebar">
+            <ul class="nav d-flex flex-sm-row flex-lg-column p-4 flex-exsm">
                 <!-- Profil -->
                 <div class="d-flex flex-column align-items-center profil">
                     <img src="assets/img/man.png" alt="foto-profil" style="width: 75px; height: 75px;">
@@ -47,9 +47,8 @@
         <div class="container-fluid col-sm-12 col-md-12 col-lg-9 p-4">
             <!-- Main Content -->
             <?php
-            $page = $_GET['page'];
-            $aksi = $_GET['aksi'];
-
+            $page = isset($_GET['page']) ? $_GET['page'] : '';
+            $aksi = isset($_GET['aksi']) ? $_GET['aksi'] : '';
             if ($page == "member") {
                 if ($aksi == "") {
                     include "page/member/member.php";
@@ -73,6 +72,12 @@
             } elseif ($page == "transaction") {
                 if ($aksi == "") {
                     include "page/transaction/transaction.php";
+                }elseif ($aksi == "add") {
+                    include "page/transaction/add.php";
+                }elseif ($aksi == "edit") {
+                    include "page/transaction/edit.php";
+                }elseif ($aksi == "delete") {
+                    include "page/transaction/delete.php";
                 }
             }
             ?>
