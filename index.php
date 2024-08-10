@@ -1,3 +1,22 @@
+<!-- Validasi login -->
+<?php
+session_start();
+
+// Simulasi login, biasanya login dilakukan melalui form
+if (isset($_POST['login'])) {
+    // Variabel $username seharusnya di-set berdasarkan form login
+    $username = $_POST['username'];
+    $_SESSION['username'] = $username;
+}
+
+// Logout
+if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+    session_destroy();
+    header("Location: index.php"); // Redirect ke halaman utama setelah logout
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +39,8 @@
                 <!-- Profil -->
                 <div class="d-flex flex-column align-items-center profil">
                     <img src="assets/img/man.png" alt="foto-profil" style="width: 75px; height: 75px;">
-                    <h4 class="mt-2">Admin</h4>
-                    <p>ID Karyawan : 2323112</p>
+                    <h4 class="mt-2 text-capitalize"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest'; ?></h4>
+                    <p><?php echo isset($_SESSION['username']) ? 'Admin' : 'Guest'; ?></p>
                 </div>
                 <!-- Menu -->
                 <div class="d-flex flex-column gap-2 align-items-start menu">
@@ -45,6 +64,15 @@
 
         <!-- Content Start -->
         <div class="container-fluid col-sm-12 col-md-12 col-lg-9 p-4">
+            <div class="d-flex justify-content-end mb-3">
+                <?php if (isset($_SESSION['username'])): ?>
+                    <!-- Tampilkan tombol logout jika pengguna sudah login -->
+                    <a href="?action=logout" class="btn btn-danger">Logout</a>
+                <?php else: ?>
+                    <!-- Tampilkan tombol login jika pengguna belum login -->
+                    <a href="login.php" class="btn btn-primary">Login</a>
+                <?php endif; ?>
+            </div>
             <!-- Main Content -->
             <?php
             $page = isset($_GET['page']) ? $_GET['page'] : '';
@@ -52,7 +80,7 @@
             if ($page == "member") {
                 if ($aksi == "") {
                     include "page/member/member.php";
-                }elseif ($aksi == "add") {
+                } elseif ($aksi == "add") {
                     include "page/member/add.php";
                 } elseif ($aksi == "edit") {
                     include "page/member/edit.php";
@@ -72,11 +100,11 @@
             } elseif ($page == "transaction") {
                 if ($aksi == "") {
                     include "page/transaction/transaction.php";
-                }elseif ($aksi == "add") {
+                } elseif ($aksi == "add") {
                     include "page/transaction/add.php";
-                }elseif ($aksi == "edit") {
+                } elseif ($aksi == "edit") {
                     include "page/transaction/edit.php";
-                }elseif ($aksi == "delete") {
+                } elseif ($aksi == "delete") {
                     include "page/transaction/delete.php";
                 }
             }
