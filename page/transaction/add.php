@@ -18,31 +18,31 @@
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">ID Anggota <span class="fst-italic">(Optional)</span></label>
-                        <input type="text" class="form-control" name="id_anggota" placeholder="Masukkan ID" inputmode="numeric" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '')" >
+                        <label class="mb-2">ID Anggota<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="id_anggota" placeholder="Masukkan ID" inputmode="numeric" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Nama</label>
-                        <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama" required>
+                        <label class="mb-2">Nama<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Peminjam" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Judul</label>
+                        <label class="mb-2">Judul<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul Buku" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Tanggal Peminjaman</label>
+                        <label class="mb-2">Tanggal Peminjaman<span class="text-danger">*</span></label>
                         <input type="date" class="form-control" name="tgl_pinjam" required>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="mb-3">
-                        <label class="mb-2">Status</label>
+                        <label class="mb-2">Status<span class="text-danger">*</span></label>
                         <select name="status" class="form-control" required>
                             <option value="Dipinjam">Dipinjam</option>
                             <option value="Dikembalikan">Dikembalikan</option>

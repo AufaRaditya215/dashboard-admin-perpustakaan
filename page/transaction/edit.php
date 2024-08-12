@@ -31,37 +31,37 @@ $data = $sql->fetch_assoc();
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">ID Anggota<span class="fst-italic">(Optional)</span></label>
-                        <input type="text" class="form-control" name="id_anggota" inputmode="numeric" maxlength="18" oninput="this.value = this.value.replace(/[^0-9]/g, '')" value="<?php echo htmlspecialchars($data['id_anggota'] ?? ''); ?>">
+                        <label class="mb-2">ID Anggota<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="id_anggota" inputmode="numeric" maxlength="18" oninput="this.value = this.value.replace(/[^0-9]/g, '')" value="<?php echo htmlspecialchars($data['id_anggota'] ?? ''); ?>" placeholder="Masukkan ID Anggota" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Nama</label>
-                        <input type="text" class="form-control" name="nama" value="<?php echo htmlspecialchars($data['nama'] ?? ''); ?>" required>
+                        <label class="mb-2">Nama<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="nama" value="<?php echo htmlspecialchars($data['nama'] ?? ''); ?>" placeholder="Masukkan Nama Peminjam" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Judul Buku</label>
-                        <input type="text" class="form-control" name="judul" value="<?php echo htmlspecialchars($data['judul'] ?? ''); ?>" required>
+                        <label class="mb-2">Judul Buku<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="judul" value="<?php echo htmlspecialchars($data['judul'] ?? ''); ?>" placeholder="Masukkan Judul Buku" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Tanggal Peminjaman</label>
+                        <label class="mb-2">Tanggal Peminjaman<span class="text-danger">*</span></label>
                         <input type="date" class="form-control" name="tgl_pinjam" value="<?php echo htmlspecialchars($data['tgl_pinjam'] ?? ''); ?>" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Tanggal Pengembalian</label>
+                        <label class="mb-2">Tanggal Pengembalian<span class="text-danger">*</span></label>
                         <input type="date" class="form-control" name="tgl_kembali" value="<?php echo htmlspecialchars($data['tgl_kembali'] ?? ''); ?>" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Status</label>
+                        <label class="mb-2">Status<span class="text-danger">*</span></label>
                             <select name="status" class="form-control" required>
                                 <option value="Dipinjam" <?php echo ($data['status'] == 'Dipinjam') ? 'selected' : ''; ?>>Dipinjam</option>
                                 <option value="Dikembalikan" <?php echo ($data['status'] == 'Dikembalikan') ? 'selected' : ''; ?>>Dikembalikan</option>

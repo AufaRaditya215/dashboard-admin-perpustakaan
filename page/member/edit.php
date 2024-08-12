@@ -31,13 +31,13 @@ $data = $sql->fetch_assoc();
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Nama</label>
-                        <input type="text" class="form-control" name="nama" value="<?php echo htmlspecialchars($data['nama'] ?? ''); ?>" required>
+                        <label class="mb-2">Nama<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="nama" value="<?php echo htmlspecialchars($data['nama'] ?? ''); ?>" placeholder="Masukkan Nama" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Jenis Kelamin</label>
+                        <label class="mb-2">Jenis Kelamin<span class="text-danger">*</span></label>
                             <select name="jenis_kelamin" class="form-control" required>
                                 <option value="Laki-Laki" <?php echo ($data['jenis_kelamin'] == 'Laki-Laki') ? 'selected' : ''; ?>>Laki-laki</option>
                                 <option value="Perempuan" <?php echo ($data['jenis_kelamin'] == 'Perempuan') ? 'selected' : ''; ?>>Perempuan</option>
@@ -46,20 +46,20 @@ $data = $sql->fetch_assoc();
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">No. Telepon</label>
-                        <input type="text" class="form-control" name="telepon" value="<?php echo htmlspecialchars($data['telepon'] ?? ''); ?>" inputmode="numeric" maxlength="15" oninput="this.value = this.value.replace(/[^0-9, +]/g, '')" required>
+                        <label class="mb-2">Nomor Telepon<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="telepon" value="<?php echo htmlspecialchars($data['telepon'] ?? ''); ?>" inputmode="numeric" maxlength="15" oninput="this.value = this.value.replace(/[^0-9, +]/g, '')" placeholder="Masukkan Nomor Telepon" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Email</label>
-                        <input type="email" class="form-control" name="email" value="<?php echo htmlspecialchars($data['email'] ?? ''); ?>" value="<?php echo htmlspecialchars($data['nama'] ?? ''); ?>" required>
+                        <label class="mb-2">Email<span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" name="email" value="<?php echo htmlspecialchars($data['email'] ?? ''); ?>" value="<?php echo htmlspecialchars($data['nama'] ?? ''); ?>" placeholder="Masukkan Email" required>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="mb-3">
-                        <label class="mb-2">Alamat</label>
-                        <input type="text" class="form-control" name="alamat" value="<?php echo htmlspecialchars($data['alamat'] ?? ''); ?>" required>
+                        <label class="mb-2">Alamat<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="alamat" value="<?php echo htmlspecialchars($data['alamat'] ?? ''); ?>" placeholder="Masukkan Alamat" required>
                     </div>
                 </div>
                 <button class="btn btn-primary mt-2 me-3" type="submit" name="simpan" value="Simpan" style="width: 100px;">Submit</button>

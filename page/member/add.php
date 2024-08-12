@@ -18,13 +18,13 @@
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Nama</label>
+                        <label class="mb-2">Nama<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Jenis Kelamin</label>
+                        <label class="mb-2">Jenis Kelamin<span class="text-danger">*</span></label>
                         <select name="jenis_kelamin" class="form-control" required>
                             <option value="Laki-Laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
@@ -33,19 +33,19 @@
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">No. Telepon</label>
+                        <label class="mb-2">Nomor Telepon<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="telepon" inputmode="numeric" maxlength="15" oninput="this.value = this.value.replace(/[^0-9, +]/g, '')" placeholder="Masukkan Nomor Telepon" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Email</label>
+                        <label class="mb-2">Email<span class="text-danger">*</span></label>
                         <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="mb-3">
-                        <label class="mb-2">Alamat</label>
+                        <label class="mb-2">Alamat<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat" required>
                     </div>
                 </div>

@@ -2,9 +2,8 @@
 <?php
 session_start();
 
-// Simulasi login, biasanya login dilakukan melalui form
+// Variabel $username di-set berdasarkan form login
 if (isset($_POST['login'])) {
-    // Variabel $username seharusnya di-set berdasarkan form login
     $username = $_POST['username'];
     $_SESSION['username'] = $username;
 }
@@ -12,7 +11,7 @@ if (isset($_POST['login'])) {
 // Logout
 if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     session_destroy();
-    header("Location: index.php"); // Redirect ke halaman utama setelah logout
+    header("Location: index.php");
     exit();
 }
 ?>
@@ -38,9 +37,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
             <ul class="nav d-flex flex-sm-row flex-lg-column p-4 flex-exsm">
                 <!-- Profil -->
                 <div class="d-flex flex-column align-items-center profil">
-                    <img src="assets/img/man.png" alt="foto-profil" style="width: 75px; height: 75px;">
-                    <h4 class="mt-2 text-capitalize"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest'; ?></h4>
-                    <p><?php echo isset($_SESSION['username']) ? 'Admin' : 'Guest'; ?></p>
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <img src="assets/img/profile.png" class="rounded-circle" alt="foto-profil" style="width: 75px; height: 75px;">
+                        <h4 class="mt-2 text-capitalize"><?php echo $_SESSION['username']; ?></h4>
+                        <p>Admin</p>
+                    <?php else: ?>
+                        <img src="assets/img/default-profile.png" class="rounded-circle" alt="foto-profil" style="width: 75px; height: 75px;">
+                        <h4 class="mt-2 text-capitalize">Guest</h4>
+                        <p>Guest</p>
+                    <?php endif; ?>
                 </div>
                 <!-- Menu -->
                 <div class="d-flex flex-column gap-2 align-items-start menu">
@@ -64,51 +69,58 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
         <!-- Content Start -->
         <div class="container-fluid col-sm-12 col-md-12 col-lg-9 p-4">
-            <div class="d-flex justify-content-end mb-3">
-                <?php if (isset($_SESSION['username'])): ?>
-                    <!-- Tampilkan tombol logout jika pengguna sudah login -->
-                    <a href="?action=logout" class="btn btn-danger">Logout</a>
-                <?php else: ?>
-                    <!-- Tampilkan tombol login jika pengguna belum login -->
-                    <a href="login.php" class="btn btn-primary">Login</a>
-                <?php endif; ?>
-            </div>
             <!-- Main Content -->
-            <?php
-            $page = isset($_GET['page']) ? $_GET['page'] : '';
-            $aksi = isset($_GET['aksi']) ? $_GET['aksi'] : '';
-            if ($page == "member") {
-                if ($aksi == "") {
-                    include "page/member/member.php";
-                } elseif ($aksi == "add") {
-                    include "page/member/add.php";
-                } elseif ($aksi == "edit") {
-                    include "page/member/edit.php";
-                } elseif ($aksi == "delete") {
-                    include "page/member/delete.php";
+            <?php if (isset($_SESSION['username'])): ?>
+                <!-- Tampilkan data jika pengguna sudah login -->
+                <div class="d-flex justify-content-end mb-3">
+                    <a href="?action=logout" class="btn btn-danger">Logout</a>
+                </div>
+                <?php
+                $page = isset($_GET['page']) ? $_GET['page'] : '';
+                $aksi = isset($_GET['aksi']) ? $_GET['aksi'] : '';
+                if ($page == "member") {
+                    if ($aksi == "") {
+                        include "page/member/member.php";
+                    } elseif ($aksi == "add") {
+                        include "page/member/add.php";
+                    } elseif ($aksi == "edit") {
+                        include "page/member/edit.php";
+                    } elseif ($aksi == "delete") {
+                        include "page/member/delete.php";
+                    }
+                } elseif ($page == "book") {
+                    if ($aksi == "") {
+                        include "page/book/book.php";
+                    } elseif ($aksi == "add") {
+                        include "page/book/add.php";
+                    } elseif ($aksi == "edit") {
+                        include "page/book/edit.php";
+                    } elseif ($aksi == "delete") {
+                        include "page/book/delete.php";
+                    }
+                } elseif ($page == "transaction") {
+                    if ($aksi == "") {
+                        include "page/transaction/transaction.php";
+                    } elseif ($aksi == "add") {
+                        include "page/transaction/add.php";
+                    } elseif ($aksi == "edit") {
+                        include "page/transaction/edit.php";
+                    } elseif ($aksi == "delete") {
+                        include "page/transaction/delete.php";
+                    }
+                } elseif ($page == "") {
+                    include "home.php";
                 }
-            } elseif ($page == "book") {
-                if ($aksi == "") {
-                    include "page/book/book.php";
-                } elseif ($aksi == "add") {
-                    include "page/book/add.php";
-                } elseif ($aksi == "edit") {
-                    include "page/book/edit.php";
-                } elseif ($aksi == "delete") {
-                    include "page/book/delete.php";
-                }
-            } elseif ($page == "transaction") {
-                if ($aksi == "") {
-                    include "page/transaction/transaction.php";
-                } elseif ($aksi == "add") {
-                    include "page/transaction/add.php";
-                } elseif ($aksi == "edit") {
-                    include "page/transaction/edit.php";
-                } elseif ($aksi == "delete") {
-                    include "page/transaction/delete.php";
-                }
-            }
-            ?>
+                ?>
+            <?php else: ?>
+                <!-- Tampilkan pesan login jika pengguna belum login -->
+                <div class="container-fluid alert alert-warning text-center" role="alert">
+                    <h4 class="alert-heading">Akses Terbatas</h4>
+                    <p>Anda harus login terlebih dahulu untuk melihat data.</p>
+                    <hr>
+                    <a href="login.php" class="btn btn-primary">Login Sekarang</a>
+                </div>
+            <?php endif; ?>
         </div>
         <!-- Content End -->
     </main>

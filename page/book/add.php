@@ -18,37 +18,37 @@
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Judul</label>
-                        <input type="text" class="form-control" name="judul" required>
+                        <label class="mb-2">Judul<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul Buku" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Pengarang</label>
-                        <input type="text" class="form-control" name="pengarang" required>
+                        <label class="mb-2">Pengarang<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="pengarang" placeholder="Masukkan Nama Pengarang" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Penerbit</label>
-                        <input type="text" class="form-control" name="penerbit" required>
+                        <label class="mb-2">Penerbit<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="penerbit" placeholder="Masukkan Nama Penerbit" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Tahun Terbit</label>
+                        <label class="mb-2">Tahun Terbit<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="tahun" inputmode="numeric" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Masukkan Angka" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Jumlah Buku</label>
+                        <label class="mb-2">Jumlah Buku<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="jumlah" inputmode="numeric" maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Masukkan Angka" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label class="mb-2">Tanggal Input</label>
+                        <label class="mb-2">Tanggal Input<span class="text-danger">*</span></label>
                         <input type="date" class="form-control" name="tanggal" required>
                     </div>
                 </div>
