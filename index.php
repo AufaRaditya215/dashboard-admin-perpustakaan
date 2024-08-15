@@ -38,7 +38,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                 <!-- Profil -->
                 <div class="d-flex flex-column align-items-center profil">
                     <?php if (isset($_SESSION['username'])): ?>
-                        <img src="assets/img/profile.png" class="rounded-circle" alt="foto-profil" style="width: 75px; height: 75px;">
+                        <img src="assets/img/profile.jpg" class="rounded-circle" alt="foto-profil" style="width: 75px; height: 75px;">
                         <h4 class="mt-2 text-capitalize"><?php echo $_SESSION['username']; ?></h4>
                         <p>Admin</p>
                     <?php else: ?>
